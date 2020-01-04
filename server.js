@@ -125,7 +125,7 @@ function parse4chanJson(object, loadMore) {
 server.get("/", (req, res) => {
     // Probabbly bad practice
     // Need to specify domain instead of *
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "https://mokacraft.github.io");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const website = req.query.website;
