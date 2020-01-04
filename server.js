@@ -72,7 +72,10 @@ function getRedditElement(infos) {
         'isLink': false,
         'href': ''
     };
-    if (url.includes(".gifv") || url.includes(".webm")) {
+    if (infos.data.isVideo) {
+        element.isVideo = true;
+        element.href = infos.data.secure_media.reddit_video.fallback_url;
+    } else if (url.includes(".gifv") || url.includes(".webm")) {
         var videoUrl = url.replace(".gifv", ".webm");
         element.isVideo = true;
         element.href = videoUrl;
@@ -122,7 +125,7 @@ function parse4chanJson(object, loadMore) {
 server.get("/", (req, res) => {
     // Probabbly bad practice
     // Need to specify domain instead of *
-    res.header("Access-Control-Allow-Origin", "https://mokacraft.github.io");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const website = req.query.website;
