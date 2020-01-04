@@ -151,9 +151,6 @@ server.get("/", (req, res) => {
     }
     getFromURL(hostname, path, res, loadMore);
 });
-
-const port = 4000;
-
-server.listen(port, () => {
-    console.log(`Server listening at ${port}`);
+server.listen(process.env.PORT || 4000, () => {
+    //console.log(`Server listening at ${port}`);
 });
