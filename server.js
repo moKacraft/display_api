@@ -75,11 +75,11 @@ function getRedditElement(infos) {
     if (infos.data.isVideo) {
         element.isVideo = true;
         element.href = infos.data.secure_media.reddit_video.fallback_url;
-    } else if (url.includes(".gifv") || url.includes(".webm")) {
-        var videoUrl = url.replace(".gifv", ".webm");
+    } else if (url.includes(".webm")) {
+        //var videoUrl = url.replace(".gifv", ".webm");
         element.isVideo = true;
-        element.href = videoUrl;
-    } else if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+        element.href = url;
+    } else if (url.match(/\.(jpeg|jpg|gif|png|gifv)$/) != null) {
         element.isImage = true;
         element.href = url;
     } else if (!(Object.entries(infos.data.secure_media_embed).length === 0 && infos.data.secure_media_embed.constructor === Object)) {
