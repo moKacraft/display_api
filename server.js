@@ -63,7 +63,7 @@ function parseRedditJson(object, loadMore) {
 
         var element = getRedditElement(infos);
 
-        threads.push({ name: name, topicLinkHref: topicLinkHref, topicLinkTextContent: topicLinkTextContent, directLinkHref: directLinkHref, directLinkTextContent: directLinkTextContent, commentLinkHref: commentLinkHref, commentLinkTextContent: commentLinkTextContent, title: title, thumbnailSrc: thumbnailSrc, element: element });
+        threads.push({ name: name, topicLinkHref: topicLinkHref, topicLinkTextContent: topicLinkTextContent, directLinkHref: directLinkHref, directLinkTextContent: directLinkTextContent, commentLinkHref: commentLinkHref, commentLinkTextContent: commentLinkTextContent, title: title, thumbnailSrc: thumbnailSrc, element: element, infos: infos });
     }
     loadMore += after;
     return { loadMore: loadMore, after: after, children: threads };
