@@ -53,6 +53,12 @@ function parseRedditJson(object, loadMore) {
         var commentLinkTextContent = '🗨️ ' + infos.data.num_comments;
 
         var thumbnailSrc = infos.data.thumbnail;
+
+        // TODO specific reddit
+        if (thumbnailSrc === 'default' || thumbnailSrc === 'self' || thumbnailSrc === 'image' || thumbnailSrc === 'nsfw') {
+            thumbnailSrc = '';
+        }
+
         var title = infos.data.title;
 
         var element = getRedditElement(infos);
