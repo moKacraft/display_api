@@ -78,7 +78,7 @@ function getRedditElement(infos) {
         'isLink': false,
         'href': ''
     };
-    if (infos.data.is_Video) {
+    if (infos.data.is_video) {
         element.isVideo = true;
         element.href = infos.data.secure_media.reddit_video.fallback_url;
     } else if (url.includes(".webm") || url.includes(".gifv")) {
