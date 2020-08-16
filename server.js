@@ -81,8 +81,8 @@ function getRedditElement(infos) {
         element.isVideo = true;
         element.href = infos.data.secure_media.reddit_video.fallback_url;
     } else if (url.includes(".webm") || url.includes(".gifv")) {
-        var videoUrl = url.replace(".gifv", ".mp4");
-        videoUrl = url.replace(".webm", ".mp4");
+        var videoUrl = url;
+        videoUrl = videoUrl.substr(0, videoUrl.lastIndexOf(".")) + ".mp4";
         element.isVideo = true;
         element.href = videoUrl;
     } else if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
