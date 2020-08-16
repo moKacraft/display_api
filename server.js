@@ -98,6 +98,7 @@ function getRedditElement(infos) {
     } else if (url.includes("https://v.redd.it/")) {
         element.isVideo = true;
         element.href = url + '/DASH_720';
+        if (infos.data.crosspost_parent_list[0].media.reddit_video.fallback_url !== undefined) element.href = infos.data.crosspost_parent_list[0].media.reddit_video.fallback_url;
     } else {
         //console.log('not yet implemented: ' + infos.data.url);
         //console.log(infos);
